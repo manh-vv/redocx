@@ -1,0 +1,16 @@
+{
+  "name": "redocx",
+  "version": "1.0.0",
+  "description": "redoc standalone-application",
+  "main": "index.js",
+  "author": "manh.vv.htth@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "koa": "2.13.1",
+    "koa-static": "5.0.0"
+  }
+}

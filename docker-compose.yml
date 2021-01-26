@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  install:
+    image: $node_img
+    container_name: redocx-install
+    user: node
+    working_dir: $working_dir
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:$working_dir
+    command: yarn
+  redocx:
+    depends_on:
+      - install
+    image: $node_img
+    container_name: redocx-8098
+    user: node
+    working_dir: $working_dir
+    env_file: .env
+    volumes:
+      - ./:$working_dir
+    expose:
+      - $PORT
+    ports:
+      - $PORT:$PORT
+    command: yarn start
